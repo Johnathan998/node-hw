@@ -20,3 +20,7 @@ inquirer
                 const numFollowers = response.data.followers;
                 const numFollowing = response.data.following;
                 let numStarred = 0;
+
+                axios.get(`https://api.github.com/users/${username}/starred`)
+                    .then(function (response) {
+                        numStarred = response.data.length;
